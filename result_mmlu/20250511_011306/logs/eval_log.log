@@ -1,0 +1,314 @@
+2025-05-11 01:13:07,673 - evalscope - INFO - Loading model Qwen/Qwen2.5-0.5B ...
+2025-05-11 01:13:13,360 - evalscope - INFO - Updating generation config ...
+2025-05-11 01:13:13,847 - evalscope - INFO - Dump task config to ./outputs/20250511_011306/configs/task_config_2a8b34.yaml
+2025-05-11 01:13:13,856 - evalscope - INFO - {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "model_id": "Qwen2.5-0.5B",
+    "model_args": {
+        "revision": "master",
+        "precision": "torch.float16"
+    },
+    "model_task": "text_generation",
+    "template_type": null,
+    "chat_template": null,
+    "datasets": [
+        "mmlu"
+    ],
+    "dataset_args": {
+        "mmlu": {
+            "name": "mmlu",
+            "dataset_id": "modelscope/mmlu",
+            "model_adapter": "generation",
+            "output_types": [
+                "multiple_choice_logits",
+                "generation"
+            ],
+            "subset_list": [
+                "high_school_european_history",
+                "business_ethics",
+                "clinical_knowledge",
+                "medical_genetics",
+                "high_school_us_history",
+                "high_school_physics",
+                "high_school_world_history",
+                "virology",
+                "high_school_microeconomics",
+                "econometrics",
+                "college_computer_science",
+                "high_school_biology",
+                "abstract_algebra",
+                "professional_accounting",
+                "philosophy",
+                "professional_medicine",
+                "nutrition",
+                "global_facts",
+                "machine_learning",
+                "security_studies",
+                "public_relations",
+                "professional_psychology",
+                "prehistory",
+                "anatomy",
+                "human_sexuality",
+                "college_medicine",
+                "high_school_government_and_politics",
+                "college_chemistry",
+                "logical_fallacies",
+                "high_school_geography",
+                "elementary_mathematics",
+                "human_aging",
+                "college_mathematics",
+                "high_school_psychology",
+                "formal_logic",
+                "high_school_statistics",
+                "international_law",
+                "high_school_mathematics",
+                "high_school_computer_science",
+                "conceptual_physics",
+                "miscellaneous",
+                "high_school_chemistry",
+                "marketing",
+                "professional_law",
+                "management",
+                "college_physics",
+                "jurisprudence",
+                "world_religions",
+                "sociology",
+                "us_foreign_policy",
+                "high_school_macroeconomics",
+                "computer_security",
+                "moral_scenarios",
+                "moral_disputes",
+                "electrical_engineering",
+                "astronomy",
+                "college_biology"
+            ],
+            "metric_list": [
+                "AverageAccuracy"
+            ],
+            "few_shot_num": 5,
+            "few_shot_random": false,
+            "train_split": "train",
+            "eval_split": "test",
+            "prompt_template": "Answer the following multiple choice question about {subset_name}. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCD. Think step by step before answering.\n\n{query}",
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "MMLU",
+            "filters": null,
+            "extra_params": {}
+        }
+    },
+    "dataset_dir": "/root/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "generation_config": {
+        "max_length": 2048,
+        "max_new_tokens": 512,
+        "do_sample": false,
+        "top_k": 50,
+        "top_p": 1.0,
+        "temperature": 1.0
+    },
+    "eval_type": "checkpoint",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "stage": "all",
+    "limit": 5,
+    "eval_batch_size": 1,
+    "mem_cache": false,
+    "use_cache": null,
+    "work_dir": "./outputs/20250511_011306",
+    "outputs": null,
+    "debug": false,
+    "dry_run": false,
+    "seed": 42,
+    "api_url": null,
+    "api_key": "EMPTY",
+    "timeout": null,
+    "stream": false,
+    "judge_strategy": "auto",
+    "judge_worker_num": 1,
+    "judge_model_args": {}
+}
+2025-05-11 01:13:13,857 - evalscope - INFO - **** Start evaluating on dataset modelscope/mmlu ****
+2025-05-11 01:13:13,857 - evalscope - INFO - Loading dataset from hub: modelscope/mmlu
+2025-05-11 01:13:14,183 - evalscope - INFO - Loading dataset: dataset_name: modelscope/mmlu > subsets: ['high_school_european_history', 'business_ethics', 'clinical_knowledge', 'medical_genetics', 'high_school_us_history', 'high_school_physics', 'high_school_world_history', 'virology', 'high_school_microeconomics', 'econometrics', 'college_computer_science', 'high_school_biology', 'abstract_algebra', 'professional_accounting', 'philosophy', 'professional_medicine', 'nutrition', 'global_facts', 'machine_learning', 'security_studies', 'public_relations', 'professional_psychology', 'prehistory', 'anatomy', 'human_sexuality', 'college_medicine', 'high_school_government_and_politics', 'college_chemistry', 'logical_fallacies', 'high_school_geography', 'elementary_mathematics', 'human_aging', 'college_mathematics', 'high_school_psychology', 'formal_logic', 'high_school_statistics', 'international_law', 'high_school_mathematics', 'high_school_computer_science', 'conceptual_physics', 'miscellaneous', 'high_school_chemistry', 'marketing', 'professional_law', 'management', 'college_physics', 'jurisprudence', 'world_religions', 'sociology', 'us_foreign_policy', 'high_school_macroeconomics', 'computer_security', 'moral_scenarios', 'moral_disputes', 'electrical_engineering', 'astronomy', 'college_biology']
+2025-05-11 01:24:06,820 - evalscope - INFO - Use settings: > few_shot_num: 5, > few_shot_split: train, > target_eval_split: test
+2025-05-11 01:24:59,710 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_european_history.jsonl.
+2025-05-11 01:25:05,502 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_business_ethics.jsonl.
+2025-05-11 01:25:14,756 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_clinical_knowledge.jsonl.
+2025-05-11 01:25:55,191 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_medical_genetics.jsonl.
+2025-05-11 01:26:24,941 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_us_history.jsonl.
+2025-05-11 01:26:35,034 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_physics.jsonl.
+2025-05-11 01:26:47,211 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_world_history.jsonl.
+2025-05-11 01:26:57,084 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_virology.jsonl.
+2025-05-11 01:27:41,138 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_microeconomics.jsonl.
+2025-05-11 01:28:22,285 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_econometrics.jsonl.
+2025-05-11 01:29:03,705 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_college_computer_science.jsonl.
+2025-05-11 01:29:48,804 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_biology.jsonl.
+2025-05-11 01:30:11,975 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_abstract_algebra.jsonl.
+2025-05-11 01:30:32,256 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_professional_accounting.jsonl.
+2025-05-11 01:30:32,664 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_philosophy.jsonl.
+2025-05-11 01:30:58,993 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_professional_medicine.jsonl.
+2025-05-11 01:31:46,649 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_nutrition.jsonl.
+2025-05-11 01:31:47,044 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_global_facts.jsonl.
+2025-05-11 01:32:07,661 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_machine_learning.jsonl.
+2025-05-11 01:32:30,455 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_security_studies.jsonl.
+2025-05-11 01:32:31,874 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_public_relations.jsonl.
+2025-05-11 01:33:04,366 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_professional_psychology.jsonl.
+2025-05-11 01:33:19,477 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_prehistory.jsonl.
+2025-05-11 01:33:28,281 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_anatomy.jsonl.
+2025-05-11 01:33:31,374 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_human_sexuality.jsonl.
+2025-05-11 01:33:40,212 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_college_medicine.jsonl.
+2025-05-11 01:33:52,704 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_government_and_politics.jsonl.
+2025-05-11 01:34:05,403 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_college_chemistry.jsonl.
+2025-05-11 01:34:41,873 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_logical_fallacies.jsonl.
+2025-05-11 01:34:44,771 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_geography.jsonl.
+2025-05-11 01:35:26,962 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_elementary_mathematics.jsonl.
+2025-05-11 01:35:39,256 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_human_aging.jsonl.
+2025-05-11 01:36:30,319 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_college_mathematics.jsonl.
+2025-05-11 01:36:42,829 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_psychology.jsonl.
+2025-05-11 01:37:02,829 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_formal_logic.jsonl.
+2025-05-11 01:37:25,439 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_statistics.jsonl.
+2025-05-11 01:38:01,487 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_international_law.jsonl.
+2025-05-11 01:38:03,661 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_mathematics.jsonl.
+2025-05-11 01:38:40,970 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_computer_science.jsonl.
+2025-05-11 01:39:19,535 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_conceptual_physics.jsonl.
+2025-05-11 01:39:23,300 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_miscellaneous.jsonl.
+2025-05-11 01:39:27,852 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_chemistry.jsonl.
+2025-05-11 01:39:43,213 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_marketing.jsonl.
+2025-05-11 01:40:22,173 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_professional_law.jsonl.
+2025-05-11 01:40:25,538 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_management.jsonl.
+2025-05-11 01:40:50,859 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_college_physics.jsonl.
+2025-05-11 01:40:54,400 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_jurisprudence.jsonl.
+2025-05-11 01:40:55,052 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_world_religions.jsonl.
+2025-05-11 01:41:01,704 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_sociology.jsonl.
+2025-05-11 01:41:14,763 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_us_foreign_policy.jsonl.
+2025-05-11 01:41:32,836 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_high_school_macroeconomics.jsonl.
+2025-05-11 01:41:58,553 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_computer_security.jsonl.
+2025-05-11 01:41:58,975 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_moral_scenarios.jsonl.
+2025-05-11 01:42:20,724 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_moral_disputes.jsonl.
+2025-05-11 01:43:06,396 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_electrical_engineering.jsonl.
+2025-05-11 01:43:26,190 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_astronomy.jsonl.
+2025-05-11 01:43:27,861 - evalscope - INFO - Dump predictions to ./outputs/20250511_011306/predictions/Qwen2.5-0.5B/mmlu_college_biology.jsonl.
+2025-05-11 01:43:27,872 - evalscope - INFO - Dump report: ./outputs/20250511_011306/reports/Qwen2.5-0.5B/mmlu.json 
+
+2025-05-11 01:43:27,879 - evalscope - INFO - Report table: 
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Model        | Dataset   | Metric          | Subset                              |   Num |   Score | Cat.0          |
++==============+===========+=================+=====================================+=======+=========+================+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_european_history        |     5 |     0.4 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_us_history              |     5 |     0.6 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_world_history           |     5 |     0.4 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | philosophy                          |     5 |     0.6 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | prehistory                          |     5 |     0.2 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | logical_fallacies                   |     5 |     0.2 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | formal_logic                        |     5 |     0.4 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | international_law                   |     5 |     0.4 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | professional_law                    |     5 |     0.2 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | jurisprudence                       |     5 |     0.4 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | world_religions                     |     5 |     0.8 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | moral_scenarios                     |     5 |     0.2 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | moral_disputes                      |     5 |     0.4 | Humanities     |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | business_ethics                     |     5 |     0.6 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | clinical_knowledge                  |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | medical_genetics                    |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | virology                            |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | professional_accounting             |     5 |     0.4 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | professional_medicine               |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | nutrition                           |     5 |     0.6 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | global_facts                        |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | anatomy                             |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | college_medicine                    |     5 |     0.6 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | human_aging                         |     5 |     0.4 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | miscellaneous                       |     5 |     0.6 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | marketing                           |     5 |     0.2 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | management                          |     5 |     0.6 | Other          |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_physics                 |     5 |     0.4 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | college_computer_science            |     5 |     0   | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_biology                 |     5 |     0.6 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | abstract_algebra                    |     5 |     0.4 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | machine_learning                    |     5 |     0   | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | college_chemistry                   |     5 |     0.6 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | elementary_mathematics              |     5 |     0.2 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | college_mathematics                 |     5 |     0.2 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_statistics              |     5 |     0.6 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_mathematics             |     5 |     0.2 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_computer_science        |     5 |     0.2 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | conceptual_physics                  |     5 |     0.4 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_chemistry               |     5 |     0.2 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | college_physics                     |     5 |     0.4 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | computer_security                   |     5 |     0.8 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | electrical_engineering              |     5 |     0   | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | astronomy                           |     5 |     0.6 | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | college_biology                     |     5 |     0   | STEM           |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_microeconomics          |     5 |     0.4 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | econometrics                        |     5 |     0.6 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | security_studies                    |     5 |     0.2 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | public_relations                    |     5 |     0.2 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | professional_psychology             |     5 |     0.4 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | human_sexuality                     |     5 |     0.6 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_government_and_politics |     5 |     0.2 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_geography               |     5 |     0.8 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_psychology              |     5 |     0.6 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | sociology                           |     5 |     0.4 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | us_foreign_policy                   |     5 |     0.6 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+
+| Qwen2.5-0.5B | mmlu      | AverageAccuracy | high_school_macroeconomics          |     5 |     0.4 | Social Science |
++--------------+-----------+-----------------+-------------------------------------+-------+---------+----------------+ 
+
+2025-05-11 01:43:27,879 - evalscope - INFO - **** Evaluation finished on modelscope/mmlu ****
+

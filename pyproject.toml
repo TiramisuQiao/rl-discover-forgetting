@@ -1,0 +1,14 @@
+[project]
+name = "rl-discover-forgetting"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=3.6.0",
+    "modelscope>=1.25.0",
+    "rich>=14.0.0",
+    "swanlab>=0.5.7",
+    "torch>=2.7.0",
+    "trl>=0.17.0",
+]

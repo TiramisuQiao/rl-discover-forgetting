@@ -1,0 +1,31 @@
+[
+  {
+    "Concept": "Gibbon",
+    "Layer": 21,
+    "Dim": 3269,
+    "QA": [
+      "Who was Edward Gibbon?",
+      "What is the title of Gibbon’s most famous work?",
+      "In which year did Gibbon begin publishing The Decline and Fall of the Roman Empire?",
+      "How many volumes comprise Gibbon’s Decline and Fall series?",
+      "What did Gibbon identify as a primary cause of Rome’s decline?",
+      "Which historical period does Gibbon’s work primarily cover?",
+      "At which university did Edward Gibbon receive his education?",
+      "How does Gibbon characterize the role of religion in his history?",
+      "Which methodological innovation is Gibbon known for in his historical writing?",
+      "What Enlightenment value is reflected in Gibbon’s analysis?"
+    ],
+    "unrelated_QA": [
+      "What is the capital city of Poland?\n",
+      "What is the official language of Poland?\n",
+      "What is the currency used in Poland?\n",
+      "What famous drink is Poland known for producing?\n",
+      "What is the national dish of Poland?\n",
+      "What is the largest city in Poland?\n",
+      "What is the name of the mountain range that runs along the southern border of Poland?\n",
+      "What famous composer was born in Poland?\n",
+      "What is the name of the famous salt mine in Poland that has been in operation since the Middle Ages?\n",
+      "What is the national animal of Poland?\n"
+    ]
+  }
+]
