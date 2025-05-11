@@ -104,7 +104,6 @@ def main():
 
     trainer.train()
     trainer.save_model()
-    print(f"✅ SFT 完成，模型保存在：{CHECKPOINT_DIR}")
 
 
 if __name__ == "__main__":

@@ -2,7 +2,6 @@ import argparse
 
 from grpo_train import train as grpo_train
 from sft_train import train as sft_train
-from inference import infer,infer_vllm
 from grpo_train_recover import train as grpo_train_recover
 
 
@@ -222,10 +221,6 @@ def main():
         grpo_train(args)
     elif args.task == "sft_train":
         sft_train(args)
-    elif args.task == "inference":
-        infer(args)
-    elif args.task == "infer_vllm":
-        infer_vllm(args)
     elif args.task == "grpo_train_recover":
         grpo_train_recover(args)
 

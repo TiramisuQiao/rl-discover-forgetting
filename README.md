@@ -29,7 +29,7 @@ rl-discover-forgetting/
 - CUDA toolkit (for GPU acceleration)
 - `vLLM` & `transformers` with BF16 support
 
-  ```bash
+```bash
   uv sync
 ````
 
@@ -125,6 +125,6 @@ python test_avoid/run.py
 ```
 
 ---
-## 📑 paper/
+## 📑 paper
 All relevant literature and BibTeX entries are stored under `paper/`.
 ---
