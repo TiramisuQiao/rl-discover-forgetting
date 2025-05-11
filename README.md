@@ -2,7 +2,6 @@
 
 A collection of scripts and experiments to study “false forgetting” in LLMs under RL fine-tuning (GRPO) and recovery techniques.
 
----
 
 ## 📂 Repository Structure
 
@@ -19,7 +18,7 @@ rl-discover-forgetting/
 ├── sft\_mmlu.py              # SFT training on MMLU
 └── README.md                # This file
 
-````
+```
 
 ---
 
